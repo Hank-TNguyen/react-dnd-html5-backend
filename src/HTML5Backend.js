@@ -184,9 +184,9 @@ export default class HTML5Backend {
 
     // On Firefox, if mousemove fires, the drag is over but browser failed to tell us.
     // This is not true for other browsers.
-    if (isFirefox()) {
-      this.window.addEventListener('mousemove', this.endDragNativeItem, true);
-    }
+//     if (isFirefox()) {
+//       this.window.addEventListener('mousemove', this.endDragNativeItem, true);
+//     }
   }
 
   endDragNativeItem() {
