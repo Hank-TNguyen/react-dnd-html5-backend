@@ -194,9 +194,9 @@ export default class HTML5Backend {
       return;
     }
 
-    if (isFirefox()) {
-      this.window.removeEventListener('mousemove', this.endDragNativeItem, true);
-    }
+//     if (isFirefox()) {
+//       this.window.removeEventListener('mousemove', this.endDragNativeItem, true);
+//     }
 
     this.actions.endDrag();
     this.registry.removeSource(this.currentNativeHandle);
@@ -392,15 +392,15 @@ export default class HTML5Backend {
       return;
     }
 
-    if (!isFirefox()) {
-      // Don't emit hover in `dragenter` on Firefox due to an edge case.
-      // If the target changes position as the result of `dragenter`, Firefox
-      // will still happily dispatch `dragover` despite target being no longer
-      // there. The easy solution is to only fire `hover` in `dragover` on FF.
-      this.actions.hover(dragEnterTargetIds, {
-        clientOffset: getEventClientOffset(e),
-      });
-    }
+//     if (!isFirefox()) {
+//       // Don't emit hover in `dragenter` on Firefox due to an edge case.
+//       // If the target changes position as the result of `dragenter`, Firefox
+//       // will still happily dispatch `dragover` despite target being no longer
+//       // there. The easy solution is to only fire `hover` in `dragover` on FF.
+//       this.actions.hover(dragEnterTargetIds, {
+//         clientOffset: getEventClientOffset(e),
+//       });
+//     }
 
     const canDrop = dragEnterTargetIds.some(
       targetId => this.monitor.canDropOnTarget(targetId),
